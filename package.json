@@ -6,8 +6,10 @@
   "author": "Aubron Wood <aubron@daemon.group>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "node-fetch": "^2.6.1",
     "rss-parser": "^3.10.0",
+    "youtube-api": "^3.0.1",
     "youtube-dl": "^3.1.0"
   },
   "scripts": {

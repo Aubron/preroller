@@ -1,3 +1,12 @@
+require('dotenv').config()
 const { AlamoFetcher } = require('./AlamoFetcher');
 
-console.log("hello world");
+
+const main = async () => {
+    console.log("hello world");
+
+    let fetcher = new AlamoFetcher();
+}
+
+
+main();
