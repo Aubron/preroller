@@ -1,0 +1,16 @@
+{
+  "name": "preroller",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Aubron/preroller.git",
+  "author": "Aubron Wood <aubron@daemon.group>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "rss-parser": "^3.10.0",
+    "youtube-dl": "^3.1.0"
+  },
+  "scripts": {
+    "start": "node ./src/main.js"
+  }
+}
