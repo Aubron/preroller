@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
+const fs = require('fs');
 const { getFileAsync } = require('./utils');
 
 class AppleInterface {
     getPopularTrailers = async (count) => {
-        cleanDownloadDirectories();
+        this.cleanDownloadDirectories();
         let popularTrailers = await fetch('https://trailers.apple.com/trailers/home/feeds/most_pop.json')
             .then((res) => res.json())
         for (let i = 0; i < count; i += 1) {

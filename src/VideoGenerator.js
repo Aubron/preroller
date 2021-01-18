@@ -25,7 +25,7 @@ class VideoGenerator {
             filter += `[v${i}][${i}:a:0]`
         }
 
-        filter += `concat=n=${videos.length}:v=1:a=1`
+        filter += `concat=n=${videos.length}:v=1:a=1[outv][outa]`
 
         await command
             .on('end', function() {
@@ -39,6 +39,11 @@ class VideoGenerator {
             })
             .complexFilter([filter])
             .output('./build/output.mp4')
+            .outputOptions([
+                '-vsync 2',
+                '-map [outv]',
+                '-map [outa]'
+            ])
             .run();
     }
 
