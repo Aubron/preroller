@@ -74,29 +74,22 @@ class YoutubeInterface {
         for (let i = 0; i < downloadList.length; i += 1) {
             let video = youtubedl(`http://www.youtube.com/watch?v=${downloadList[i]}`,
                 ['--format=mp4']);
-            /*
-            let video = youtubedl(
-                `http://www.youtube.com/watch?v=${downloadList[i]}`,
-                ['--format=mp4'],
-                { cwd: '__dirname/build/alamo' }
-            )
-            */
 
             video.on('info', function(info) {
-                console.log('Download started')
-                console.log('filename: ' + info._filename)
-                console.log('size: ' + info.size)
+                console.log('YouTube Download started')
+                console.log(info._filename)
             })
 
+            video.on('error', (e) => {
+                console.log('ERROR ' + e);
+            });
+
             video.pipe(fs.createWriteStream(`./build/alamo/${i}.mp4`))
-            console.log('test');
         }
-        console.log(downloadList);
     }
 
     cleanDownloadDirectories = () => {
         if (fs.existsSync('./build/alamo')) {
-            console.log('deleting');
             // delete directory and contents
             fs.rmdirSync('./build/alamo', { recursive: true });
         }

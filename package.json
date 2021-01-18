@@ -6,7 +6,9 @@
   "author": "Aubron Wood <aubron@daemon.group>",
   "license": "MIT",
   "dependencies": {
+    "d3-array": "^2.9.1",
     "dotenv": "^8.2.0",
+    "fluent-ffmpeg": "^2.1.2",
     "node-fetch": "^2.6.1",
     "rss-parser": "^3.10.0",
     "youtube-api": "^3.0.1",
